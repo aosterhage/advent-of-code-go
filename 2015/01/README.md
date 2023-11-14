@@ -1,4 +1,6 @@
---- Day 1: Not Quite Lisp ---
+# Day 1: Not Quite Lisp
+
+## Part One
 
 Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
 
@@ -22,7 +24,13 @@ For example:
 
 To what floor do the instructions take Santa?
 
---- Part Two ---
+### My Perspective
+
+The problem statement is very straight-forward. Two solutions come to mind
+- Count the total number of '(' runes in the string and subtract it from the number of ')' runes. We could utilize the strings.Count() function to make our function small.
+- Iterate through the string and keep a running floor count that starts at 0. When a '(' rune is encountered, increment floor once. When a ')' rune is encountered, decrement floor once.
+
+## Part Two
 
 Now, given the same instructions, find the position of the first character that causes him to enter the basement (floor -1). The first character in the instructions has position 1, the second character has position 2, and so on.
 
@@ -32,3 +40,8 @@ For example:
     ()()) causes him to enter the basement at character position 5.
 
 What is the position of the character that causes Santa to first enter the basement?
+
+### My Perspective
+
+This part lends itself very well to our proposed second implementation from part one. Iterate over the string and keep a running floor count. Once it goes negative return that position.
+

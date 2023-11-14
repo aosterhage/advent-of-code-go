@@ -14,14 +14,14 @@ func main() {
 	fmt.Printf("Part 2: %v\n", PartTwo(input))
 }
 
-func PartOne(input string) int {
-	return strings.Count(input, "(") - strings.Count(input, ")")
+func PartOne(s string) int {
+	return strings.Count(s, "(") - strings.Count(s, ")")
 }
 
-func PartTwo(input string) int {
+func PartTwo(s string) int {
 	floor := 0
 
-	for i, r := range input {
+	for i, r := range s {
 		if r == '(' {
 			floor++
 		} else {
@@ -29,6 +29,7 @@ func PartTwo(input string) int {
 		}
 
 		if floor < 0 {
+			// the problem wants the character's position, which is the index + 1
 			return i + 1
 		}
 	}

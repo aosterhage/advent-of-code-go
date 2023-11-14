@@ -2,8 +2,6 @@ package main
 
 import "testing"
 
-var benchmark int
-
 func TestPartOne(t *testing.T) {
 	var subtests = []struct {
 		name   string
@@ -31,12 +29,6 @@ func TestPartOne(t *testing.T) {
 	}
 }
 
-func BenchmarkPartOne(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		benchmark = PartOne(input)
-	}
-}
-
 func TestPartTwo(t *testing.T) {
 	var subtests = []struct {
 		name   string
@@ -54,11 +46,5 @@ func TestPartTwo(t *testing.T) {
 				t.Errorf("result is %v but expected %v", result, subtest.expect)
 			}
 		})
-	}
-}
-
-func BenchmarkPartTwo(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		benchmark = PartTwo(input)
 	}
 }
